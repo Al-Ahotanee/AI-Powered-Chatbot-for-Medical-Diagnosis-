@@ -1,11 +1,11 @@
 services:
   - type: web
     name: aegis-health
-    env: python
+    runtime: python
     region: oregon
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app --workers 2 --threads 4 --timeout 60 --bind 0.0.0.0:$PORT
+    startCommand: gunicorn App:app --workers 2 --threads 4 --timeout 60 --bind "0.0.0.0:$PORT"
     envVars:
       - key: GEMINI_API_KEY
         sync: false
