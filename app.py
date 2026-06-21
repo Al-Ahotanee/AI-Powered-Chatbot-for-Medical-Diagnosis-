@@ -82,7 +82,7 @@ def chat():
             temperature=0.4,
         )
         chat_session = client.chats.create(
-            model="gemini-2.5-flash",
+            model="gemini-2.5-flash-lite",
             config=config,
             history=gemini_history,
         )
